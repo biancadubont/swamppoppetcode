@@ -100,6 +100,9 @@
                         <a href="#contact">User Details</a>
                     </li>
                     <li>
+                        <a href="#contact">Login</a>
+                    </li>
+                    <li>
                         <a href="#contact">Logout</a>
                     </li>
 
@@ -124,3 +127,13 @@
         </div>
 
     </nav>
+    
+    <header class="header-image">
+   <!--  <img src="assets/stars.jpg" alt=""> -->
+    <div class="center-block2"><img src="assets/veve.png"></div>
+        <div class="headline">
+            <div class="container">
+              
+            </div>
+        </div>
+    </header>
