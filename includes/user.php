@@ -42,14 +42,30 @@ class User{
 						$oConnection->escape($this->sEmail)."', '".
 						$oConnection->escape($this->sAdmin)."')";
 
-						echo $sSQL;
+						// echo $sSQL;
 
-						$oConnection->query($sSQL);
-						$this->iId = $oConnection->getInsertId();
+						$bSuccess = $oConnection->query($sSQL);
 
-		}
+						if($bSuccess == true){
+							$this->iId = $oConnection->getInsertId();	
+						}
+							}else{
+
+		$sSQL = "UPDATE users 
+			SET first_name ='".$this->sFirstName."', 
+			last_name = '".$this->sLastName."', 
+			password = '".$this->sPassword."',
+			address = '".$this->sAddress."', 
+			telephone = '".$this->sTelephone."', 
+			email = '".$this->sEmail."' 
+			WHERE id = ".$this->iId;
+
+			echo $sSQL;
+
+			$oConnection->query($sSQL);                                                                                                                                                                                                                                             
 	}
-	public function load (){
+}
+	public function load ($iId){
 		$oConnection = new Connection ();
 
 		$sSQL= "SELECT id, username, password, first_name, last_name,telephone, address,email, admin 

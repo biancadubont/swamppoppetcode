@@ -2361,3 +2361,9 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
+var img = new Image();
+img.src = 'splogowt.png';
+img.onclick = function() {
+    window.location.href = 'swamppoppetcode/main.php';
+};
+document.body.appendChild(img);

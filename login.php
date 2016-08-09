@@ -9,21 +9,27 @@
     require_once('includes/form.php');
 
     $oForm = new Form();
+//print_r($_POST);
 
     if(isset($_POST['submit'])==true){
         $oUser = new User();
         $bSuccess = $oUser->loadByUserName($_POST['username']);
+        
 
         if($bSuccess == true){
+            //print_r($oUser);
 
-            if (password_verify($_POST['password'], $oUser->sPassword)==true){
+            if (password_verify($_POST['password'], $oUser->sPassword) == true){
                 $_SESSION['userid']= $oUser->iId;
 
                 $oCart = new Cart();
 
                 $oCart->add(4);
+                $oCart->add(5);
 
                 $_SESSION['cart']= $oCart;
+
+       
 
                 header('Location: userdetails.php');
 
@@ -32,9 +38,9 @@
     }
 
 $oForm->open();
-$oForm->MakeTextInput('Username', 'username');
-$oForm->MakeTextInput('Password','password');
-$oForm->MakeSubmit('Login', 'submit');
+$oForm->makeInputField('Username', 'username','text');
+$oForm->makeInputField('Password','password','password');
+$oForm->MakeSubmit('Sign in', 'submit');
 $oForm->close();
 ?>
 

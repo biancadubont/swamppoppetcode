@@ -22,7 +22,7 @@ class Form{
 		$this->sHTML .= '</form>';
 	}
 
-	public function makeTextInput($sLabel, $sInputName){
+	public function makeInputField($sLabel, $sInputName, $sType){
 		$sData = '';
 
 		if(isset($this->aErrors[$sInputName])==true){
@@ -36,7 +36,7 @@ class Form{
 
 		$this->sHTML .='
 		<p class="contact-input">
-		<input type="text" name="'.$sInputName.'" placeholder="'.$sLabel.'" autofocus>
+		<input type="' . $sType . '" name="'.$sInputName.'" placeholder="'.$sLabel.'" value="'.$sData.'" autofocus required>
 		</p>
 		';
 
@@ -45,36 +45,30 @@ class Form{
 		$this->sHTML .= '<p>' .$sError. '</p>';
 	}
 
-	// public function makeFileInput($sLabel, $sInputName){
-	// 	$sError = '';
-	// 	if(isset($this->aErrors[$sInputName])==true){
-	// 		$sError = $this->aErrors[$sInputName];
-	// 	}
-
-	// 	$this->sHTML .= '<input type="text" name="'.$sInputName.'" placeholder="'.$sLabel.'" autofocus>';
-
- //        $this->sHTML .='<p>' .$sError. '</p>';
-	// }
 
 	public function makeSubmit($sLabel, $sInputName){
-		$this->sHTML .= '<p class="contact-submit, signup">'.$sLabel.'<input type="submit" name ="'.$sInputName.'" value="Sign up">';
+		$this->sHTML .=	'<p class="contact-submit, signup"><input type="submit" name ="'.$sInputName.'" value="' .$sLabel.'"></p>';
 		// /Above is this correct? //
 	}
 
-	// public function makeSelectInput($sLabel, $sInputName, $aOptions){
-	// 	$sData = '';
-	// 	if(issets($this->aData[$sInputName])==true){
-	// 		$sData = $this->aErrors[$sInputName];
-	// 	}
+	public function makeSelectInput($sLabel, $sInputName, $aOptions){
+		$sData = '';
+		if(issets($this->aData[$sInputName])==true){
+			$sData = $this->aErrors[$sInputName];
+		}
 
-	// 	$this->sHTML .= '<input type="text" name="'.$sInputName.'" placeholder="'.$sLabel.'" autofocus>';
-	// }
-	// foreach is this needed here?
-
-	///////Have is missed anything here? 
- 		// $this->sHTML .= '<p>' .$sError. '</p>';
-
+		$this->sHTML .= '<input type="text" name="'.$sInputName.'" placeholder="'.$sLabel.'" autofocus>';
+	}
+	
 }
+	// /////Have is missed anything here? 
+ // 		$this->sHTML .= '<p>' .$sError. '</p>';
+
+	// public function addError($sInputName;$sErrorMessage){
+
+	// 	if(isset($this->aErrors[$sInputName])==true){
+	// 		$sError = $this->aErrors[$sInputName];
+
 
 
    

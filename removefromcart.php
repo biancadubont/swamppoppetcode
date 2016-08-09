@@ -2,17 +2,17 @@
 require_once('includes/cart.php');
 session_start();
 
-if(isset($_SESSION['userid'])==false){
+if(isset($_SESSION['userid'])==true){
   header('Location:login.php');
 }
 
 
 $oCart = $_SESSION['cart'];
-$iPetId = $_GET['productid'];
-$oCart->add($iPetId);
+$iProductId = $_GET['productid'];
+$oCart->remove($iProductId);
 
 //////redirect to shopping cart////
 
-header('Location: showcart.php');
+header('Location: showcart.php?' . $_GET['productid']);
 
 ?>

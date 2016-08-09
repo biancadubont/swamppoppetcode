@@ -1,7 +1,6 @@
 <?php
-    require_once('header.php');
+     require_once('includes/header.php');
 ?>
-
     <!-- Page Content -->
 
     <div class="container">
@@ -56,8 +55,7 @@
         </div>
         <!-- /.row -->
 
-        <hr>
-
        <?php
-        require_once('footer.php');
+    require_once('includes/footer.php');
        ?>
+   

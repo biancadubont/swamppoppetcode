@@ -15,7 +15,17 @@ $oForm = new Form();
 
 
 
-if(isset($_POST['submit']) ==true){
+// if(isset($_POST['submit']) ==true){
+//       $oForm->aData = $_POST;
+
+//       if($_POST['username'] == ''){
+//         $oForm->addError('username','required');
+//         $oForm->addError('','required');
+
+//       }
+
+      // if(count($oForm->aErrors) == 0){
+      if(isset($_POST['submit'])== true){
 
         $oUser = new User();
         $oUser->sUserName =$_POST['username'];
@@ -26,37 +36,55 @@ if(isset($_POST['submit']) ==true){
         $oUser->sTelephone =$_POST['telephone'];
         $oUser->sEmail =$_POST['email'];
         $oUser->sAdmin ='no';
-          $oUser->save();
+        $oUser->save();
 
-          // echo '<pre>';
-          // print_r($oUser);
+        //print_r($oUser); exit;
 
-          // print_r($_POST);
-          // echo '</pre>';
+        // echo '<pre>';
+        // print_r($oUser);
 
-        header('location: success.php');
-}
+        // print_r($_POST);
+        // echo '</pre>';
+
+        header('Location: success.php');
+        exit;
+      }
+
+        
+
 
         $oForm->open();
-        $oForm->makeTextInput('First Name','first_name');
-        $oForm->makeTextInput('Last Name','last_name');
-        $oForm->makeTextInput('Address','address');
-        $oForm->makeTextInput('Telephone','telephone');
-        $oForm->makeTextInput('Email','email');
-        $oForm->makeTextInput('Username','username');
-        $oForm->makeTextInput('Password','password');
-        $oForm->makeSubmit('Register','submit');
+        $oForm->makeInputField('First Name','first_name', 'text');
+        $oForm->makeInputField('Last Name','last_name', 'text');
+        $oForm->makeInputField('Address','address', 'text');
+        $oForm->makeInputField('Telephone','telephone', 'tel');
+        $oForm->makeInputField('Email','email', 'email');
+        $oForm->makeInputField('Username','username', 'text');
+        $oForm->makeInputField('Password','password', 'password');
+        $oForm->makeSubmit('Submit','submit');
         $oForm->close();
 
 
 
 ?>
 
-      
-        <div class="signupform">
-        <h1 class= "featurette-heading">Sign up</h1>
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class= "featurette-heading">Sign up</h1>
+        </div>
 
-        <?php echo $oForm->sHTML; ?>
+        <div class="col-sm-3">
+         
+        </div>
+
+        <div class="col-sm-4">
+          <?php echo $oForm->sHTML; ?>
+        </div>
+
+        <div class="col-sm-5">
+            <img class="featurette-imagemary img-circle responsive-img" src="assets/erzulie.jpg">
+        </div>
+      </div>
 
 
        <!--  <form action="index.html" class="contact">
@@ -126,10 +154,6 @@ if(isset($_POST['submit']) ==true){
                 </fieldset>
               </form>
             </div> -->
-
-            <div class="col-sm-5">
-                <img class="featurette-imagemary img-circle" src="assets/erzulie.jpg">
-            </div>
 
 <?php
   require_once('includes/footer.php');

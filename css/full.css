@@ -5,25 +5,32 @@
  */
 
 body {
-    margin-top: 50px; /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    margin-top: 50px;
+     /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+     height: 100%;
 }
+
 
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 
 .full {
-    background: url('http://placehold.it/1920x1080') no-repeat center center fixed;
+   /* background: url('http://placehold.it/1920x1080') no-repeat center center fixed;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    height: 100%;
 }
 
 /*Bianca code*/
 
 #video{
     /*height: 1920px;*/
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
    
  }
 
@@ -32,6 +39,7 @@ body {
     width: 100%;
     height:100%;
     padding:0;
+
 
  
  }
@@ -43,8 +51,12 @@ body {
     position:absolute;
     top:50%;
     left:50%;
-    width: 300px;
 }
+.homepage-logo{
+    z-index: 99;
+    max-width: 300px;
+  }
+
 
 /*Loader*/
 #loader .dot:nth-child(7n+8)::before {
@@ -98,12 +110,18 @@ body {
     -o-background-size: cover;
 }*/
 
-.navbar-inverse .navbar-collapse{
+.background-black{
     background-color: #080808;
 }
 
 .navbar{
     margin-bottom:0;
+}
+
+.navbar-brand{
+  background:url('../assets/splogoblksmall.jpg') center center no-repeat;
+  width:120px;
+  height:120px;
 }
 /* Customize the text color and shadow color and to optimize text legibility. */
 
@@ -116,9 +134,9 @@ body {
     margin: 0 auto;
 }
 
-footer {
+/*footer {
     margin: 50px 0;
-}
+}*/
 .col-sm-8{
     padding-left:50px;
     padding-right: 181px;
@@ -178,6 +196,7 @@ body {
     background-size: cover;
     -o-background-size: cover;
     background-image: url("../assets/stars.jpg");
+    overflow:hidden;
 
 }
 
@@ -189,7 +208,6 @@ body {
     position:absolute;
     top:50%;
     left:50%;
-    width: 300px;
 }
 
 .headline {
@@ -250,6 +268,7 @@ footer {
         font-size: 63px;
     }
 
+
     .featurette-divider {
         margin: 50px 0;
     }
@@ -298,9 +317,6 @@ footer {
 }
 
 @media(max-width:768px) {
-    .container {
-        margin: 0 15px;
-    }
 
     .featurette-divider {
         margin: 40px 0;
@@ -835,4 +851,14 @@ input, textarea, select, label {
 .container.main{
 
   width: 80%;
+  background-color: white;
+}
+
+.row{
+  display: inline-block;
+
+
+}
+.col-lg-12{
+  align-items: baseline;
 }

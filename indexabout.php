@@ -1,15 +1,13 @@
 <?php
-require_once('includes/header.php');
+require_once ('includes/header.php');
 ?>
-      
 
-
-    <!-- Page Content -->
+    Page Content
     <div class="container">
 
         <hr class="featurette-divider">
 
-        <!-- First Featurette -->
+       
         <div class="featurette" id="about">
             <img class="featurette-image img-circle img-responsive pull-right" src="assets/erzulie.jpg">
             <h2 class="featurette-heading">Swamp Poppet Curios Co <br>
@@ -25,7 +23,7 @@ require_once('includes/header.php');
 
         <hr class="featurette-divider">
 
-        <!-- Second Featurette -->
+
         <div class="featurette" id="services">
             <img class="featurette-image img-circle img-responsive pull-left" src="assets/book.jpg">
             <h2 class="featurette-heading">High Priestess<br>
@@ -35,7 +33,6 @@ require_once('includes/header.php');
         </div>
         <hr class="featurette-divider">
 
-      <?php
-
-      require_once('includes/footer.php');
-      ?>
+     <?php
+     require_once ('includes/footer.php');
+     ?>

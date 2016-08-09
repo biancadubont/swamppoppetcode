@@ -3,7 +3,11 @@
     require_once('type_manager.php');
     require_once('view.php');
 
+    $aTypes = TypeManager::getTypes();
+
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -24,6 +28,7 @@
     <!-- Custom CSS -->
     <link href="css/business-frontpage.css" rel="stylesheet">
     <link href="css/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,100 +41,59 @@
 
 <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-    <?php
-
-    $aTypes = TypeManager::getTypes();
-
-    echo View::renderNav($aTypes);
-    ?>
-
-<!--                    <ul class="nav navbar-nav">
-                    <li>
-                        <img src="assets/splogoblksmall.jpg" alt="#">
-                    </li>
-                    <li>
-                        <a href="indexabout.html">About</a>
-                    </li>
-                    <li>
-                        <a href="#services">Services</a>
-                    </li>
-
-                    <li>
-                        <a href="showType.php?typeid=1">Sacred Oils</a>
-                    </li>
-                    <li>
-                        <a href="showType.php?typeid=2">Incense</a>
-                    </li>
-                    <li>
-                        <a href="showType.php?typeid=2">Soap</a>
-                    </li>
-                    <li>
-                        <a href="showType.php?typeid=2">Alter Necklaces</a>
-                    </li>
-                    <li>
-                        <a href="showType.php?typeid=2">Fabric Art</a>
-                    </li>
-                    <li>
-                        <a href="showType.php?typeid=2">Charms</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Sign up</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Admin Login</a>
-                    </li>
-                    <li>
-                        <a href="#contact">User Details</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Login</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Logout</a>
-                    </li>
-
-
-            <form class="pure-form pure-form-stacked"> 
-                    <form class="login">
-
-                        <label for="username">Username</label>
-                        <input id="username" type="text" 
-                        Placeholder="Username">
-
-                        <label for="password">Password</label>
-                        <input id="password" type="password" placeholder="Password">
-                        <button type="submit" class="btn">Log in</button>
-                  
-                    </form>
-
-
-
-                </ul>
- -->            </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" alt="#">
+      <div class="container-fluid background-black">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"></a>
         </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#"><span class="sr-only">(current)</span></a></li>
+            <li>
+                <a href="main.php">About</a>
+            </li>
+            <li>
+                <a href="contactinfo.php">Services</a>
+            </li>
+
+            <?php echo View::renderNav($aTypes)?>
+            <!-- <li>
+                <a href="showtype.php">Products</a>
+            </li> -->
+            <li>
+                <a href="message.php">Contact</a>
+            </li>
+            <li>
+                <a href="register.php">Sign up</a>
+            </li>
+            <li>
+                <a href="#contact">Admin Login</a>
+            </li>
+            <li>
+                <a href="login.php">Login</a>
+            </li>
+            <li>
+                <a href="landing.html">Logout</a>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
     </nav>
     
+
     <header class="header-image">
-   <!--  <img src="assets/stars.jpg" alt=""> -->
+    <img src="assets/stars.jpg" alt="">
     <div class="center-block2"><img src="assets/veve.png"></div>
         <div class="headline">
             <div class="container">
