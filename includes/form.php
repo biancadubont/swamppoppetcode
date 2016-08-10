@@ -22,10 +22,10 @@ class Form{
 		$this->sHTML .= '</form>';
 	}
 
-	public function makeInputField($sLabel, $sInputName, $sType){
+	public function makeInputField($sLabel, $sInputName, $sType='text'){
 		$sData = '';
 
-		if(isset($this->aErrors[$sInputName])==true){
+		if(isset($this->aData[$sInputName])==true){
 			$sData = $this->aData[$sInputName];
 		}
 

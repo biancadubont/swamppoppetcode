@@ -862,3 +862,7 @@ input, textarea, select, label {
 .col-lg-12{
   align-items: baseline;
 }
+h3, a{
+  margin-left: 50%
+
+}

@@ -20,7 +20,7 @@ $oUser->load($iUserId);
 $aStickyData = [];
 $aStickyData['first_name']=$oUser->sFirstName;
 $aStickyData['last_name']=$oUser->sLastName;
-$aStickyData['password']=$oUser->sPassword;
+// $aStickyData['password']=$oUser->sPassword;
 $aStickyData['address']=$oUser->sAddress;
 $aStickyData['telephone']=$oUser->sTelephone;
 $aStickyData['email']=$oUser->sEmail;
@@ -28,13 +28,13 @@ $aStickyData['email']=$oUser->sEmail;
 $oForm = new Form();
 $oForm->aData = $aStickyData;
 
-//print_r($oForm);
+// print_r($oForm);
 
 if(isset($_POST['submit'])==true){
 
 	$oUser->sFirstName = $_POST['first_name'];
 	$oUser->sLastName = $_POST['last_name'];
-	$oUser->sPassword = $_POST['password'];
+	// $oUser->sPassword = $_POST['password'];
 	$oUser->sAddress = $_POST['address'];
 	$oUser->sTelephone = $_POST['telephone'];
 	$oUser->sEmail = $_POST['email'];
@@ -47,7 +47,7 @@ if(isset($_POST['submit'])==true){
 $oForm->open();
 $oForm->makeInputField('First Name', 'first_name');
 $oForm->makeInputField('Last Name', 'last_name');
-$oForm->makeInputField('Password', 'password');
+// $oForm->makeInputField('Password', 'password');
 $oForm->makeInputField('Address', 'address');
 $oForm->makeInputField('Telephone', 'telephone');
 $oForm->makeInputField('Email', 'email');
